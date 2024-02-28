@@ -11,16 +11,16 @@ Resources:
       CodeUri: ./lambda-function
       Role: arn:aws:iam::664038053552:role/service-role/cloudresume-test-api-role-yzzna79h  # Replace with your existing Lambda execution role ARN
 
-  # MyDynamoDBTable:
-  #   Type: 'AWS::DynamoDB::Table'
-  #   Properties:
-  #     TableName: VisitorCounter-sam-test  # Replace with your existing DynamoDB table name
-  #     AttributeDefinitions:
-  #       - AttributeName: id
-  #         AttributeType: S
-  #       - AttributeName: visits
-  #         AttributeType: N
-  #     KeySchema:
-  #       - AttributeName: id
-  #         KeyType: HASH
-  #     BillingMode: PAY_PER_REQUEST # Set BillingMode to PAY_PER_REQUEST for on-demand capacity
+  MyDynamoDBTable:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      TableName: VisitorCounter-sam-test  # Replace with your existing DynamoDB table name
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+        # - AttributeName: visits
+        #   AttributeType: N
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST # Set BillingMode to PAY_PER_REQUEST for on-demand capacity
